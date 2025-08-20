@@ -1,33 +1,31 @@
+# 🌐 Terraform EKS Cluster Deployment
 
-# Terraform EKS Project
+## 📖 Overview
+This repository contains **Terraform configurations** to create an **Amazon EKS (Elastic Kubernetes Service) cluster** along with its associated **node groups** and **VPC infrastructure** on AWS.  
 
-This repository contains a Terraform configuration for provisioning an **Amazon EKS cluster** along with node groups in AWS.
-
----
-
-## Project Overview
-
-The project automates the setup of:
-
-- **VPC** with public and private subnets  
-- **EKS Cluster**  
-- **EKS Node Group(s)** with IAM roles and policies  
-- Configurable **instance types** and **scaling settings**  
-
-This setup is ideal for learning, testing, or small-scale development workloads on AWS.
+The project automates the deployment of a fully functional Kubernetes cluster with nodes ready to run workloads.
 
 ---
 
-## Prerequisites
-
-- [AWS CLI](https://aws.amazon.com/cli/) configured with credentials  
-- [Terraform](https://www.terraform.io/downloads.html) v1.5+  
-- An AWS account with permissions to create:
-  - EKS clusters  
-  - IAM roles and policies  
-  - VPCs, subnets, and EC2 instances  
+## ✨ Features
+- ✅ **Create an EKS Cluster** with a specified Kubernetes version.
+- ✅ **Deploy EKS Node Groups** with configurable instance types and scaling options.
+- ✅ **Automatically create a VPC** with public and private subnets.
+- ✅ **Attach necessary IAM roles and policies** for EKS and nodes.
+- ✅ **Supports Free Tier eligible instance types** like `t3.micro` and `t4g.small`.
+- ✅ **Outputs public and private subnet IDs** for further use.
 
 ---
 
-## Terraform Structure
+## 🗂 Project Structure
 
+terraform-sprints/
+├── main.tf # Main Terraform entry file
+├── variables.tf # All input variables
+├── outputs.tf # Outputs from Terraform
+├── infrastructure-modules/
+│ ├── vpc/
+│ │ └── main.tf # VPC, subnets, outputs
+│ └── eks/
+│ └── main.tf # EKS cluster, node groups, IAM roles
+├── README.md
